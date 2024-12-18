@@ -300,8 +300,6 @@ pub fn language(lang_str: String) -> std::io::Result<()> {
         lang.debugger.as_ref().map(|dap| dap.command.to_string()),
     )?;
 
-    probe_parser(lang.grammar.as_ref().unwrap_or(&lang.language_id))?;
-
     probe_protocol(
         "formatter",
         lang.formatter
